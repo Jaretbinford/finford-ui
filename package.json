@@ -1,0 +1,21 @@
+{
+  "name": "finford-ui",
+  "version": "1.0.0",
+  "description": "Behold the majesty of JavaScript",
+  "dependencies": {
+    "create-react-class": "15.6.3",
+    "dayjs": "^1.8.14",
+    "highlight.js": "9.18.1",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
+    "react-flip-move": "3.0.4",
+    "react-highlight.js": "1.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/jarrodctaylor/finford.git"
+  },
+  "devDependencies": {
+    "shadow-cljs": "2.8.93"
+  }
+}

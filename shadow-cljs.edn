@@ -1,0 +1,31 @@
+; 
+; 
+{:deps true
+ :source-paths ["src" "test"]
+ :dev-http {8080 "target/"}
+ :nrepl {:port 9001
+         :middleware []} ;; Adjust this as needed to not overlap with other active projects
+ :builds {:app {:target :browser
+                :js-options {:js-provider :shadow}
+                :output-dir "resources/public/js/compiled"
+                :asset-path "/js/compiled"
+                :modules {:main {:init-fn finford-ui.core/main}}
+                :compiler-options {:infer-externs :auto
+                                   :externs ["externs/cognito.js"]}
+                 :dev {:closure-defines {goog.DEBUG true
+                                         finford-ui.config.app-debugger-active? true}}
+                :release {:closure-defines {goog.DEBUG false
+                                            finford-ui.config.app-debugger-active? false}}
+                :devtools {:http-root "resources/public"
+                           :preloads []
+                           :after-load finford-ui.core/on-reload
+                           :http-port 9876}}
+          :test     {:target    :browser-test
+                     :test-dir  "resources/public/js/test"
+                     :ns-regexp "-test$"
+                     :closure-defines {finford-ui/alert-timeout-ms 10}
+                     :devtools  {:http-port 8021
+                                 :http-root "resources/public/js/test"}}}}
+; 
+; 
+
