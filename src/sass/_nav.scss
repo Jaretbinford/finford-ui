@@ -4,6 +4,7 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 header {
   display: flex;
   justify-content: space-between;
+  background-color: #3273dc;
   align-items: center;
   padding: 15px 10%;
   border-bottom: 1px solid darken($color1, 80%);
@@ -18,9 +19,11 @@ header {
       display: inline-block;
       padding: 0px 20px;
       a {
+        color: #FFFFFF;
         transition: all 0.3s ease 0s;
         &:hover {
-          background: $color2;
+          color: $color5;
+          text-decoration: underline;
         }
       }
     }

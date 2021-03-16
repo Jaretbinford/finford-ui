@@ -6,6 +6,9 @@
     [finford-ui.events :as shared-events]
     [finford-ui.subs :as shared-subs]))
 
+;Read Reagent docs.
+;reframe does state management
+
 (rf/reg-event-db
   ::toggle-mobile-nav-modal
   (fn [db _]
@@ -34,12 +37,13 @@
       [:div.logo [:img {:src "https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-bank-coin.png"}]]
       [:nav.hidden-on-mobile
        [:ul.nav-links
-        [:li [:a {:href "#/"} "Index"]]
-        [:li [:a {:href "#/accounts"} "Accounts Snapshot"]]
-        [:li [:a {:href "#/change-pass"} "Change Password"]]]]
-      [:div.user.hidden-on-mobile
-       (if username
-         [:span [:a {:href "#/login" :on-click #(>dis [::shared-events/logout])} "Logout"]]
-         [:span [:a {:href "#/login"} "Login"]])]
+        [:li#login-button [:a {:href "#/"} "Index"]]
+        [:li#login-button [:a {:href "#/accounts"} "Accounts Snapshot"]]
+        [:li#login-button [:a {:href "#/upload"} "Dashboard"]]
+        [:li#login-button [:a {:href "#/upload"} "Upload"]]
+        [:li#login-button [:a {:href "#/change-pass"} "Change Password"]
+      (if username
+         [:span#login-main [:a {:href "#/login" :on-click #(>dis [::shared-events/logout])} "Logout"]]
+         [:span#login-main [:a {:href "#/login"} "Login"]])]
       [:a.visible-on-mobile.hamburger {:id (when mobile-nav-visible? "mobile-menu-open")
-                                       :on-click #(>dis [::toggle-mobile-nav-modal])} [:span]]]]))
+                                       :on-click #(>dis [::toggle-mobile-nav-modal])} [:span]]]]]]))

@@ -4,6 +4,7 @@
 @import 'nav';
 @import 'centered_card';
 @import 'debug';
+@import 'bulma';
 
 
 html,
@@ -30,8 +31,42 @@ body {
 }
 #login-wrapper {
   @include centered-card($color6, $color3);
+  color: $color3;
 }
 #change-pass-wrapper {
   @include centered-card($color6, $color3);
 }
+#login-button {
+  background: #3273dc;
+  color: $color3;
+  font-size: 25px;
+  padding: 2px 40px 2px 40px;
+  align-items: center;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;}
+
+
+  #username {
+  background: url(https://raw.githubusercontent.com/Jaretbinford/finford-ui/master/resources/images/user.png) no-repeat;
+  background-position: 1% 90%;
+  padding: 2px 40px 2px 40px;
+  }
+  #password {
+  padding: 2px 40px 2px 40px;
+  background: url(https://raw.githubusercontent.com/Jaretbinford/finford-ui/master/resources/images/lock.png) no-repeat;
+  background-position: 10px -53px !important }
+
+#login-main{  color: $color3;
+              font-size: 25px;
+                 padding: 2px 0px 2px 100px;
+                 -webkit-transition: all 0.3s ease;
+                 -moz-transition: all 0.3s ease;
+                 -ms-transition: all 0.3s ease;
+                 -o-transition: all 0.3s ease;
+                 transition: all 0.3s ease;}
+
 // endregion
