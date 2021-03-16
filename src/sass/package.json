@@ -10,5 +10,8 @@
   "scripts": {
     "css": "node-sass site.scss ../../resources/public/css/site.css",
     "watch:css": "yarn css -w"
+  },
+  "dependencies": {
+    "bulma": "^0.9.2"
   }
 }
